@@ -1,0 +1,22 @@
+.red {
+    color : red;
+}
+@mixin func(){
+    background: #eeeeee;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.my-alert{
+    @include func();
+}
+.my-alert2 {
+    @extend .my-alert;
+    background: #ffe591;
+}
+.my-alert p{
+    margin-bottom: 0;
+}

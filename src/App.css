@@ -13,6 +13,16 @@
   }
 }
 
+.Jumbotron{
+  height: 250px;
+  background-color: #96a2b9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: url('./IMG_1825.JPG');
+  background-size: cover;
+  color: black;
+  margin-bottom: 20px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
