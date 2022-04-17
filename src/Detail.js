@@ -11,21 +11,25 @@ let Title = styled.h4`
     color : ${props => props.color}
 `;
 function Detail(props){
-    useEffect(()=>{
-        setTimeout(()=>{
-            alertChange(false);
-        }, 2000)
-    })
-    
     let history = useHistory();
     let { id } = useParams();
     let [alert, alertChange] = useState(true);
-
+    let [tmp, tmpChange] = useState('');
     let selectedGood = props.goods.filter(ele=>{
         return ele.id == id})[0];
+
+    useEffect(()=>{
+        let timer = setTimeout(()=>{
+            alertChange(false);
+        }, 2000)
+        return ()=>{ clearTimeout(timer) };
+    },[alert])
+    
     return(
       <div className="container">
           <Box><Title className="red">Detail</Title></Box>
+          <input onChange={(e)=>{tmpChange(e.target.value)}}/>
+          {tmp}
           {
             alert 
             ? <div className="my-alert">재고가 얼마 남지 않았습니다.</div>
